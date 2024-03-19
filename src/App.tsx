@@ -4,7 +4,9 @@ import './App.css';
 import Footer from './components/footer';
 import Header from './components/header';
 import Home from './components/home';
-import About from './components/about'
+import About from './components/about';
+import Items from './components/items';
+import ItemPage from './components/itempage';
 
 
 
@@ -15,6 +17,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/about' element={<About />}/>
+        <Route path='/items' element={<Items/>}/>
+        <Route path='/items/:id' element={<ItemPage/>}/>
       </Routes>
         <Footer/>
     </Router>

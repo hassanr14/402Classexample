@@ -8,7 +8,7 @@ export default function About() {
       <section className="hero is-large is-info">
       <div className="hero-body">
         <p className="title">
-          Large hero
+          About page
         </p>
         <p className="subtitle">
           Large subtitle

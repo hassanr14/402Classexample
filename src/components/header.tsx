@@ -36,9 +36,9 @@ return(
           <Link to="/about" className="navbar-item">
             About
           </Link>
-          <a className="navbar-item">
-            Jobs
-          </a>
+          <Link to="/items" className="navbar-item">
+            Items
+          </Link>
           <a className="navbar-item">
             Contact
           </a>

@@ -9,7 +9,7 @@ async function getAll() {
 
 const get = async(id: string) => {
 
-    return http.get<Item>(`/items/{id}`);
+    return http.get<Item>(`/items/${id}`);
 }
 
 

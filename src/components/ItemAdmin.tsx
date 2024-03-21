@@ -10,7 +10,16 @@ import { Link } from "react-router-dom";
 export default function Items() { 
 
 
-    const [items, setItems] = useState<Item[]>([]); 
+    const [items, setItems] = useState<Item[]>([]);
+    const [itemUpdate, setItemupdate] = useState<Item>({
+        name:"",
+        id:"",
+        price:""
+    })
+
+    const handleChange = (event:any)=> {
+        setItemupdate({...itemUpdate, [event.target.name] : event.target.value});
+    }
 
 
     const getItems = () => { 
@@ -49,6 +58,47 @@ const deleteItems =(id:string) => {
     })
 }
 
+const updateItem = (inItem:Item) => { 
+
+        setItemupdate(inItem); 
+    
+      } 
+    
+    
+      const saveItem = () => { 
+    
+        const item = {...itemUpdate}; 
+    
+        ItemService.put(item) 
+    
+        .then((response:any) => { 
+    
+          alert(response.data); 
+    
+          getItems(); 
+    
+        }) 
+    
+        .catch((e:Error) => { 
+    
+          console.log(e); 
+    
+          alert(e.message); 
+    
+        }) 
+    
+      }
+
+
+const resetform = () => (
+    setItemupdate({
+        id:"",
+        name:"",
+        price:"",
+    })
+)    
+    
+
     useEffect(() => { 
 
         getItems(); 
@@ -64,6 +114,24 @@ const deleteItems =(id:string) => {
                 <h1 className="title">Item Catalogue</h1> 
 
             </section> 
+            <section className="section">
+                <form>
+                    <div className="Card">
+                        <div className="card-content">
+                            <p>Item ID </p>
+                            <input className="input" type="text" name="id" value={itemUpdate.id} onChange={handleChange}/>
+                            <p>Item Name </p>
+                            <input className="input" type="text" name="name" value={itemUpdate.name} onChange={handleChange}/>
+                            <p>Item Price </p>
+                            <input className="input" type="text" name="price" value={itemUpdate.price} onChange={handleChange}/>
+                            <button className="button is-roundeed is-danger" onClick={() => {saveItem()}}>Add or Update Item</button>
+                            <button className="button is-roundeed is-danger" onClick={() => {resetform()}}>Reset</button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </section>
 
             <div className="columns is-multiline"> 
 

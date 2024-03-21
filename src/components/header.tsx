@@ -22,6 +22,10 @@ return(
       <Link to="/" className="navbar-item">
         Home
       </Link>
+
+      <Link to="/ItemAdmin" className="navbar-item">
+        Admin
+      </Link>
    
       <a className="navbar-item">
         Documentation
@@ -36,6 +40,7 @@ return(
           <Link to="/about" className="navbar-item">
             About
           </Link>
+          
           <Link to="/items" className="navbar-item">
             Items
           </Link>

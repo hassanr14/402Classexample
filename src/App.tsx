@@ -7,6 +7,7 @@ import Home from './components/home';
 import About from './components/about';
 import Items from './components/items';
 import ItemPage from './components/itempage';
+import ItemAdmin from './components/ItemAdmin';
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/about' element={<About />}/>
         <Route path='/items' element={<Items/>}/>
         <Route path='/items/:id' element={<ItemPage/>}/>
+        <Route path='/itemadmin' element={<ItemAdmin/>}/>
       </Routes>
         <Footer/>
     </Router>

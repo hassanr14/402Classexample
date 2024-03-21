@@ -12,12 +12,15 @@ const get = async(id: string) => {
     return http.get<Item>(`/items/${id}`);
 }
 
-
+const remove = async(id:string) =>{
+    return http.delete(`/items/${id}`)
+}
 
 const ItemService = {
 
     getAll,
-    get
+    get,
+    remove
 }
 
 export default ItemService;

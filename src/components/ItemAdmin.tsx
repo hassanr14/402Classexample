@@ -124,8 +124,8 @@ const resetform = () => (
                             <input className="input" type="text" name="name" value={itemUpdate.name} onChange={handleChange}/>
                             <p>Item Price </p>
                             <input className="input" type="text" name="price" value={itemUpdate.price} onChange={handleChange}/>
-                            <button className="button is-roundeed is-danger" onClick={() => {saveItem()}}>Add or Update Item</button>
-                            <button className="button is-roundeed is-danger" onClick={() => {resetform()}}>Reset</button>
+                            <button className="button is-rounded is-danger" onClick={() => {saveItem()}}>Add or Update Item</button>
+                            <button className="button is-rounded is-danger" onClick={() => {resetform()}}>Reset</button>
                         </div>
                     </div>
                 </form>

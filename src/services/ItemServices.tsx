@@ -1,5 +1,6 @@
 import http from '../http-common';
 import {Item} from '../types/item'; 
+import {fetchAuthSession} from 'aws-amplify/auth';
 
 async function getAll() {
 
@@ -17,9 +18,18 @@ const remove = async(id:string) =>{
 }
 
 
-const put = async(data: Item) => {
+const put = async (data: Item) => {
+    try {
+        const { accessToken, idToken } = ( await fetchAuthSession()).tokens ?? {};
+        return http.put('/items', data); {
+            headers: {
+                Authorization: idToken?.toString()
+            }
+        }
+    }
 
-    return http.put('/items', data);
+
+    
 
 }
 

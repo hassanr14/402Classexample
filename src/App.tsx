@@ -8,12 +8,14 @@ import About from './components/about';
 import Items from './components/items';
 import ItemPage from './components/itempage';
 import ItemAdmin from './components/ItemAdmin';
+import { Authenticator } from '@aws-amplify/ui-react';
 
 
 
 function App() {
   return (
     <Router>
+      <Authenticator loginMechanisms={['email']} signUpAttributes={['name']}>
       <Header/>
       <Routes>
         <Route path='/' element={<Home />}/>
@@ -23,6 +25,7 @@ function App() {
         <Route path='/itemadmin' element={<ItemAdmin/>}/>
       </Routes>
         <Footer/>
+        </Authenticator>
     </Router>
 
   );

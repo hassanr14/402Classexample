@@ -24,8 +24,9 @@ function App() {
         <Route path='/items/:id' element={<ItemPage/>}/>
         <Route path='/itemadmin' element={<ItemAdmin/>}/>
       </Routes>
-        <Footer/>
-        </Authenticator>
+      <Footer/>
+      </Authenticator>
+        
     </Router>
 
   );
